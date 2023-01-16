@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Huiswerk Maatje</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static\vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+  <link href="../static\vendor\bootstrap-icons\bootstrap-icons.css" rel="stylesheet">
+  <link href="../static\vendor\boxicons\css\boxicons.min.css" rel="stylesheet">
+  <link href="../static\vendor\glightbox\css\glightbox.min.css" rel="stylesheet">
+  <link href="../static\vendor\remixicon\remixicon.css" rel="stylesheet">
+  <link href="../static\vendor\swiper\swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center" style="background-color: rgba(250, 250, 250, 0.937);">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="#">Huiswerk Maatje</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#pricing">Pricing</a></li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="/writing">Again!</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+
+    <section class="inner-page" style="position: relative; width: 100%; height: 100%;">
+      <div class="container">
+        <!-- <img class="image" src="static/images/Picture1.png" alt="image"> --> 
+        <div class="form-container">
+          <br>
+          <div>
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger" role="alert">
+              {{ message }}
+            </div>
+            {% endfor %}
+          </div>
+          <br>
+          <br>
+          <h2> Dit is het resulaat, wat vind je ervan? </h2>
+          <br/>
+          <div class="chalkboard-container"> 
+              <!--<img src="../static/images/chalkboard.png" alt="image" class="chalkboard-img">-->
+              <p class="chalkboard-text form-control" id="output"> {{ output | nl2br  | safe }}</p>
+              <br>
+              <br>
+          </div>
+          <div>
+            <a href="writing"><button class="btn btn-primary" id="backbutton" name="backbutton">Go back</button></a>
+            <button class="btn btn-primary" id="savebutton" name="savebutton">Save as PDF</button> 
+          </div>
+        </div>
+      
+      </div>
+      
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Huiswerk-Maatje</strong>. All Rights Reserved
+          </div>
+          
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="/" class="scrollto">Home</a>
+            <a href="/#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Vendor JS Files -->
+  <script src="../static\vendor\purecounter\purecounter_vanilla.js"></script>
+  <script src="../static\vendor\aos\aos.js"></script>
+  <script src="../static\vendor\bootstrap\js\bootstrap.bundle.min.js"></script>
+  <script src="../static\vendor\glightbox\js\glightbox.min.js"></script>
+  <script src="../static\vendor\isotope-layout\isotope.pkgd.min.js"></script>
+  <script src="../static\vendor\swiper\swiper-bundle.min.js"></script>
+  <script src="../static\vendor\php-email-form\validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
