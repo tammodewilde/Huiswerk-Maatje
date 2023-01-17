@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'eu.gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'eu.gcr.io/huiswerk-maatje/huiswerk-maatje', '.']
+# Push the container image to Container Registry
+- name: 'eu.gcr.io/cloud-builders/docker'
+  args: ['push', 'eu.gcr.io/huiswerk-maatje/huiswerk-maatje']
+# Deploy container image to Cloud Run
+- name: 'eu.gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'huiswerk-maatje', '--image', 'eu.gcr.io/huiswerk-maatje/huiswerk-maatje', '--region', 'europe-west4']
+images:
+- eu.gcr.io/huiswerk-maatje/huiswerk-maatje
