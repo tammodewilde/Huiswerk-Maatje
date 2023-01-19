@@ -4,8 +4,9 @@ from flask_login import login_required, current_user
 #from .models import Note
 from . import db
 import openai
+import os
 
-openai.api_key = "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"
+api_key = os.environ["OPENAI_API_KEY"]
 
 views = Blueprint("views", __name__)
 
@@ -15,7 +16,6 @@ def index():
     return render_template("index.html", user=current_user)
 
 @views.route("/writing", methods=["GET", "POST"])
-@login_required
 def writing():
     if request.method == "GET":
         return render_template("writing.html", user=current_user)
